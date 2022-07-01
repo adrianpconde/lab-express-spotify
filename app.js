@@ -14,6 +14,8 @@ app.use(express.static(__dirname + "/public"));
 // setting the spotify-api goes here:
 
 // Our routes go here:
+const routes = require("./config/routes.config");
+app.use("/", routes);
 // TODO: require router and use it
 
 app.listen(3000, () =>
