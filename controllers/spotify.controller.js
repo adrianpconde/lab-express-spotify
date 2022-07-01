@@ -28,12 +28,12 @@ module.exports.album = (req, res, next) => {
 };
 
 module.exports.tracks = (req, res, next) => {
-    spotifyApi
-      .getAlbumTracks(req.params.albumId)
-      .then((data) => {
-        res.render("tracks", { tracks: data.body.items });
-      })
-      .catch((err) =>
-        console.log("The error while searching artists occurred: ", err)
-      );
-  };
+  spotifyApi
+    .getAlbumTracks(req.params.albumId)
+    .then((data) => {
+      res.render("tracks", { tracks: data.body.items });
+    })
+    .catch((err) =>
+      console.log("The error while searching artists occurred: ", err)
+    );
+};
